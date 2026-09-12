@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bajo Tierra - Samanta Schweblin</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="depth-0">
+
+  <!-- Lienzo para partículas de tierra -->
+  <div id="tsparticles"></div>
+
+  <main class="container">
+
+    <!-- Slide 1: Superficie -->
+    <section class="slide active" id="slide-0">
+      <div class="content">
+        <span class="depth-tag">[ SUPERFICIE - 0m ]</span>
+        <h1>Bajo tierra</h1>
+        <h2>Samanta Schweblin</h2>
+        <p class="subtitle">Taller de Lectura — Un descenso al enrarecimiento de la realidad.</p>
+        <button class="btn" onclick="nextSlide()">Empujar la pala / Empezar a cavar ↓</button>
+      </div>
+    </section>
+
+    <!-- Slide 2: Nivel 1 - La Autora -->
+    <section class="slide" id="slide-1">
+      <div class="content">
+        <span class="depth-tag">[ NIVEL 1: CAPA VEGETAL - 5m ]</span>
+        <h2>La Autora: Samanta Schweblin</h2>
+        <div class="author-layout">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Samanta_Schweblin_in_2019.jpg/640px-Samanta_Schweblin_in_2019.jpg" alt="Samanta Schweblin" class="author-img">
+          <div class="author-text">
+            <p>Nació en Buenos Aires en 1978. Estudió Diseño de Imagen y Sonido (UBA) y reside en Berlín. Es una de las referentes fundamentales de la narrativa contemporánea en español y del gótico/extraño latinoamericano.</p>
+            <blockquote class="quote">
+              "Me interesa todo lo extraño que hay en lo cotidiano. Lo que llamamos normalidad es un malentendido."
+            </blockquote>
+          </div>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn btn-secondary" onclick="prevSlide()">↑ Volver a la superficie</button>
+          <button class="btn" onclick="nextSlide()">Cavar más profundo (-20m) ↓</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3: Nivel 2 - Bibliografía -->
+    <section class="slide" id="slide-2">
+      <div class="content">
+        <span class="depth-tag">[ NIVEL 2: ESTRATO DE ROCA - 20m ]</span>
+        <h2>Las Capas de su Obra</h2>
+        <div class="cards-grid">
+          <div class="card">
+            <h3>Libros de Cuentos</h3>
+            <ul>
+              <li><em>El núcleo del disturbio</em> (2002)</li>
+              <li><em>Pájaros en la boca</em> (2009)</li>
+              <li><em>Siete casas vacías</em> (2015)</li>
+              <li><em>El buen mal</em> (2025)</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Novelas</h3>
+            <ul>
+              <li><em>Distancia de rescate</em> (2014)</li>
+              <li><em>Kentukis</em> (2018)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn btn-secondary" onclick="prevSlide()">↑ Subir nivel</button>
+          <button class="btn" onclick="nextSlide()">Descender al cuento (-50m) ↓</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4: Nivel 3 - El Cuento -->
+    <section class="slide" id="slide-3">
+      <div class="content">
+        <span class="depth-tag">[ NIVEL 3: LAS PROFUNDIDADES - 50m ]</span>
+        <h2>"Bajo tierra" (<em>Pájaros en la boca</em>, 2009)</h2>
+        <div class="box">
+          <h3>El Contexto</h3>
+          <p>Obra clave que la posicionó internacionalmente, enfocada en quiebres sutiles e inquietantes de la realidad.</p>
+        </div>
+        <div class="box">
+          <h3>La Trama del Pozo</h3>
+          <p>Un parador de ruta y una historia minera. Un grupo de niños comienza a cavar un pozo obsesivamente en un descampado hasta desaparecer. La búsqueda desesperada lleva a los padres a una locura colectiva, excavando frenéticamente bajo sus propias casas y calles.</p>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn btn-secondary" onclick="prevSlide()">↑ Subir nivel</button>
+          <button class="btn" onclick="nextSlide()">Entrar al fondo (-100m) ↓</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5: Núcleo - Debate -->
+    <section class="slide" id="slide-4">
+      <div class="content">
+        <span class="depth-tag">[ NÚCLEO: NIVELES SUBTERRÁNEOS - 100m ]</span>
+        <h2>Claves de Lectura y Debate</h2>
+        <div class="cards-grid three-cols">
+          <div class="card">
+            <h3>1. La grieta cotidiana</h3>
+            <p>¿En qué momento preciso el suelo conocido deja de ser un lugar seguro?</p>
+          </div>
+          <div class="card">
+            <h3>2. La obsesión</h3>
+            <p>La tierra no solo entierra cosas, consume a toda la comunidad en la búsqueda.</p>
+          </div>
+          <div class="card">
+            <h3>3. Schweblin vs. Enríquez</h3>
+            <p>Enríquez trabaja el terror explícito y político; Schweblin construye la extrañeza sutil, el absurdo y la tensión velada.</p>
+          </div>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn btn-secondary" onclick="prevSlide()">↑ Subir nivel</button>
+          <button class="btn" onclick="goToStart()">Emerger a la superficie ⌂</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Carga de la librería de partículas tsParticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine@2/tsparticles.engine.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-basic@2/tsparticles.basic.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-interaction-particles@2/tsparticles.interaction.particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+  <!-- Script de lógica de navegación -->
+  <script src="script.js"></script>
+</body>
+  </html>
