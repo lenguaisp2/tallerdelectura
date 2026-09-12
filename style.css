@@ -243,3 +243,22 @@ ul {
   .cards-grid, .cards-grid.three-cols { grid-template-columns: 1fr; }
   .content { padding: 1.5rem; }
 }
+
+/* Estilo especial para la diapositiva de la cita */
+.quote-large {
+  font-family: 'Lora', serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: #d19a66;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+  quotes: "“" "”";
+}
+
+.quote-author {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  color: #a89481;
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
