@@ -1,0 +1,245 @@
+/* Configuración básica */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lora', serif;
+  color: #e2d7c5;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  transition: background-color 1.2s ease;
+}
+
+/* Transición de colores por niveles de profundidad */
+body.depth-0 { background-color: #2b1a10; } /* Superficie */
+body.depth-1 { background-color: #20120a; } /* Capa vegetal -5m */
+body.depth-2 { background-color: #160c06; } /* Estrato de roca -20m */
+body.depth-3 { background-color: #0d0603; } /* Las profundidades -50m */
+body.depth-4 { background-color: #050201; } /* Núcleo -100m */
+
+/* Animación de temblor al cavar (Shake Effect) */
+@keyframes shakeScreen {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-4px, 5px) rotate(-0.5deg); }
+  40% { transform: translate(5px, -3px) rotate(0.5deg); }
+  60% { transform: translate(-3px, -2px) rotate(-0.3deg); }
+  80% { transform: translate(3px, 4px) rotate(0.3deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+body.shaking {
+  animation: shakeScreen 0.35s ease-in-out;
+}
+
+/* Fondo de partículas */
+#tsparticles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Contenedor principal */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+}
+
+/* Diapositivas */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(100vh);
+  transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.9s ease;
+  pointer-events: none;
+  padding: 1.5rem;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.slide.previous {
+  transform: translateY(-100vh);
+  opacity: 0;
+}
+
+/* Tarjeta principal de contenido */
+.content {
+  max-width: 850px;
+  width: 100%;
+  background: rgba(20, 13, 8, 0.88);
+  border: 1px solid #4a3324;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+/* Etiqueta de profundidad */
+.depth-tag {
+  font-family: monospace;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: #a87b51;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3.8rem;
+  color: #d19a66;
+  margin-bottom: 0.3rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  color: #cbb49a;
+  margin-bottom: 1.2rem;
+}
+
+h3 {
+  color: #d19a66;
+  margin-bottom: 0.4rem;
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #d8c8b8;
+}
+
+.subtitle {
+  font-style: italic;
+  font-size: 1.25rem;
+  color: #a89481;
+  margin-bottom: 2rem;
+}
+
+/* Sección de Autora */
+.author-layout {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.author-img {
+  width: 170px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #5c3a21;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+.author-text {
+  flex: 1;
+}
+
+.quote {
+  font-style: italic;
+  color: #d19a66;
+  border-left: 3px solid #8c5a32;
+  padding-left: 1rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+/* Cajas y Grillas */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.cards-grid.three-cols {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card, .box {
+  background: rgba(35, 22, 14, 0.7);
+  border: 1px solid #3d2516;
+  padding: 1.2rem;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
+}
+
+.box {
+  text-align: left;
+}
+
+ul {
+  margin-left: 1.2rem;
+  line-height: 1.7;
+}
+
+/* Botones de navegación */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.8rem;
+}
+
+.btn {
+  background: #5c3a21;
+  color: #f3ece0;
+  border: 1px solid #8c5a32;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  font-family: 'Lora', serif;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #7a4e2d;
+  box-shadow: 0 0 15px rgba(168, 123, 81, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  border-color: #4a3324;
+  color: #a89481;
+}
+
+.btn-secondary:hover {
+  background: rgba(92, 58, 33, 0.3);
+  color: #e2d7c5;
+}
+
+/* Diseño adaptable a móviles */
+@media (max-width: 700px) {
+  h1 { font-size: 2.5rem; }
+  .author-layout { flex-direction: column; text-align: center; }
+  .author-img { width: 140px; height: 180px; }
+  .cards-grid, .cards-grid.three-cols { grid-template-columns: 1fr; }
+  .content { padding: 1.5rem; }
+}
