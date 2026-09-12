@@ -21,23 +21,35 @@
       <div class="content">
         <h1>Bajo tierra</h1>
         <h2>Samanta Schweblin</h2>
-        <p class="subtitle">Taller de Lectura — Un descenso al enrarecimiento de la realidad.</p>
-        <button class="btn" onclick="nextSlide()">⛏️ ↓</button>
+        <div class="nav-buttons">
+          <button class="btn" onclick="nextSlide()">⛏️ ↓</button>
+        </div>
       </div>
     </section>
 
-    <!-- Slide 2: La Autora -->
+    <!-- Slide 2: Cita de la autora -->
     <section class="slide" id="slide-1">
+      <div class="content">
+        <blockquote class="quote-large">
+          "Me interesa todo lo extraño que hay en lo cotidiano. Lo que llamamos normalidad es un malentendido."
+        </blockquote>
+        <p class="quote-author">— Samanta Schweblin</p>
+        <div class="nav-buttons">
+          <button class="btn btn-secondary" onclick="prevSlide()">↑ Volver</button>
+          <button class="btn" onclick="nextSlide()">⛏️ ↓</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3: La Autora (Biografía e Imagen) -->
+    <section class="slide" id="slide-2">
       <div class="content">
         <h2>La autora: Samanta Schweblin</h2>
         <div class="author-layout">
-          <!-- Si subes una imagen propia a GitHub, puedes cambiar el atributo src por el nombre de tu archivo (ej: src="foto-autora.jpg") -->
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Samanta_Schweblin_in_2019.jpg/640px-Samanta_Schweblin_in_2019.jpg" alt="Samanta Schweblin" class="author-img">
+          <!-- Reemplaza "autora.jpg" por el nombre exacto de la imagen que subas a GitHub -->
+          <img src="autora.jpg" alt="Samanta Schweblin" class="author-img">
           <div class="author-text">
             <p>Nació en Buenos Aires en 1978. Estudió Diseño de Imagen y Sonido (UBA) y reside en Berlín. Es una de las referentes fundamentales de la narrativa contemporánea en español y del gótico/extraño latinoamericano.</p>
-            <blockquote class="quote">
-              "Me interesa todo lo extraño que hay en lo cotidiano. Lo que llamamos normalidad es un malentendido."
-            </blockquote>
           </div>
         </div>
         <div class="nav-buttons">
@@ -47,8 +59,8 @@
       </div>
     </section>
 
-    <!-- Slide 3: Su Obra -->
-    <section class="slide" id="slide-2">
+    <!-- Slide 4: Su Obra -->
+    <section class="slide" id="slide-3">
       <div class="content">
         <h2>Su obra</h2>
         <div class="cards-grid">
@@ -76,8 +88,8 @@
       </div>
     </section>
 
-    <!-- Slide 4: El Cuento -->
-    <section class="slide" id="slide-3">
+    <!-- Slide 5: El Cuento -->
+    <section class="slide" id="slide-4">
       <div class="content">
         <h2>"Bajo tierra" (<em>Pájaros en la boca</em>, 2009)</h2>
         <div class="box">
