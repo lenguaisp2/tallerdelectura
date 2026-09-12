@@ -3,7 +3,7 @@ const slides = document.querySelectorAll('.slide');
 const body = document.body;
 let particlesContainer = null;
 
-// Función para activar el efecto de temblor al cavar
+// Efecto de temblor al avanzar
 function triggerShake() {
   body.classList.add('shaking');
   setTimeout(() => {
@@ -11,22 +11,19 @@ function triggerShake() {
   }, 350);
 }
 
-// Actualizar el color de fondo y la densidad de partículas según el nivel
+// Actualizar fondo y partículas según el nivel
 function updateDepth(index) {
-  // Cambiar clase de profundidad en el body (controla el color de fondo en CSS)
   body.className = `depth-${index}`;
 
-  // Ajustar velocidad y densidad de partículas según la profundidad
   if (particlesContainer) {
     const pOptions = particlesContainer.options;
-    pOptions.particles.number.value = 80 + (index * 30); // Más tierra al bajar
-    pOptions.particles.move.speed.min = 1 + (index * 0.5);
-    pOptions.particles.move.speed.max = 3 + (index * 1);
+    pOptions.particles.number.value = 80 + (index * 40);
+    pOptions.particles.move.speed.min = 1 + (index * 0.7);
+    pOptions.particles.move.speed.max = 3 + (index * 1.2);
     particlesContainer.refresh();
   }
 }
 
-// Avanzar a la siguiente diapositiva (Descender)
 function nextSlide() {
   if (currentSlide < slides.length - 1) {
     triggerShake();
@@ -38,7 +35,6 @@ function nextSlide() {
   }
 }
 
-// Retroceder a la diapositiva anterior (Ascender)
 function prevSlide() {
   if (currentSlide > 0) {
     slides[currentSlide].classList.remove('active');
@@ -49,7 +45,6 @@ function prevSlide() {
   }
 }
 
-// Volver a la superficie
 function goToStart() {
   triggerShake();
   slides.forEach(slide => {
@@ -60,7 +55,7 @@ function goToStart() {
   updateDepth(0);
 }
 
-// Control por teclado (Flechas del teclado)
+// Navegación con teclado
 document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
     nextSlide();
@@ -69,7 +64,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Configuración de la librería tsParticles (Efecto de tierra cayendo)
+// Configuración de la librería tsParticles
 tsParticles.load("tsparticles", {
   fpsLimit: 60,
   particles: {
