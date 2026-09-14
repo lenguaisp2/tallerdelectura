@@ -15,11 +15,11 @@ body {
 }
 
 /* Transición de colores por niveles de profundidad */
-body.depth-0 { background-color: #2b1a10; } /* Superficie */
-body.depth-1 { background-color: #20120a; } /* Capa vegetal -5m */
-body.depth-2 { background-color: #160c06; } /* Estrato de roca -20m */
-body.depth-3 { background-color: #0d0603; } /* Las profundidades -50m */
-body.depth-4 { background-color: #050201; } /* Núcleo -100m */
+body.depth-0 { background-color: #2b1a10; }
+body.depth-1 { background-color: #20120a; }
+body.depth-2 { background-color: #160c06; }
+body.depth-3 { background-color: #0d0603; }
+body.depth-4 { background-color: #050201; }
 
 /* Animación de temblor al cavar (Shake Effect) */
 @keyframes shakeScreen {
@@ -66,6 +66,7 @@ body.shaking {
   transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.9s ease;
   pointer-events: none;
   padding: 1.5rem;
+  overflow-y: auto; /* Permite scroll interno si la pantalla es muy pequeña */
 }
 
 .slide.active {
@@ -92,14 +93,8 @@ body.shaking {
   text-align: center;
 }
 
-/* Etiqueta de profundidad */
-.depth-tag {
-  font-family: monospace;
-  font-size: 0.85rem;
-  letter-spacing: 2px;
-  color: #a87b51;
-  display: block;
-  margin-bottom: 0.8rem;
+.content.wide-content {
+  max-width: 1050px;
 }
 
 h1 {
@@ -130,14 +125,25 @@ p {
   color: #d8c8b8;
 }
 
-.subtitle {
+/* Cita */
+.quote-large {
+  font-family: 'Lora', serif;
+  font-size: 1.5rem;
   font-style: italic;
-  font-size: 1.25rem;
-  color: #a89481;
-  margin-bottom: 2rem;
+  color: #d19a66;
+  line-height: 1.6;
+  margin: 1.5rem 0;
 }
 
-/* Sección de Autora */
+.quote-author {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  color: #a89481;
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
+
+/* Sección Autora */
 .author-layout {
   display: flex;
   gap: 1.8rem;
@@ -159,26 +165,71 @@ p {
   flex: 1;
 }
 
-.quote {
-  font-style: italic;
-  color: #d19a66;
-  border-left: 3px solid #8c5a32;
-  padding-left: 1rem;
-  margin-top: 1rem;
-  font-size: 1rem;
+/* Grilla de Libros (TV / Pantalla grande por defecto) */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  margin: 1.5rem 0;
 }
 
-/* Cajas y Grillas */
+.books-grid.novels-grid {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 500px;
+  margin: 1.5rem auto;
+}
+
+.book-card {
+  background: rgba(35, 22, 14, 0.6);
+  border: 1px solid #4a3324;
+  border-radius: 8px;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  border-color: #d19a66;
+}
+
+.book-card.highlight {
+  border: 2px solid #d19a66;
+  box-shadow: 0 0 15px rgba(209, 154, 102, 0.25);
+}
+
+.book-cover {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.7);
+  margin-bottom: 0.6rem;
+  background-color: #1a120d;
+}
+
+.book-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.88rem;
+  color: #e2d7c5;
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+}
+
+.book-year {
+  font-size: 0.8rem;
+  color: #a87b51;
+}
+
+/* Cajas y Grillas Generales */
 .cards-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.2rem;
   margin-top: 1rem;
   text-align: left;
-}
-
-.cards-grid.three-cols {
-  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .card, .box {
@@ -189,14 +240,8 @@ p {
   margin-bottom: 0.8rem;
 }
 
-.box {
-  text-align: left;
-}
-
-ul {
-  margin-left: 1.2rem;
-  line-height: 1.7;
-}
+.box { text-align: left; }
+ul { margin-left: 1.2rem; line-height: 1.7; }
 
 /* Botones de navegación */
 .nav-buttons {
@@ -235,111 +280,49 @@ ul {
   color: #e2d7c5;
 }
 
-/* Diseño adaptable a móviles */
-@media (max-width: 700px) {
-  h1 { font-size: 2.5rem; }
-  .author-layout { flex-direction: column; text-align: center; }
-  .author-img { width: 140px; height: 180px; }
-  .cards-grid, .cards-grid.three-cols { grid-template-columns: 1fr; }
-  .content { padding: 1.5rem; }
-}
-
-/* Estilo especial para la diapositiva de la cita */
-.quote-large {
-  font-family: 'Lora', serif;
-  font-size: 1.6rem;
-  font-style: italic;
-  color: #d19a66;
-  line-height: 1.6;
-  margin: 1.5rem 0;
-  quotes: "“" "”";
-}
-
-.quote-author {
-  font-family: 'Cinzel', serif;
-  font-size: 1.1rem;
-  color: #a89481;
-  text-align: right;
-  margin-bottom: 1.5rem;
-}
-
-/* Ajuste de contenedor más ancho para pantallas horizontales / TV */
-.content.wide-content {
-  max-width: 1050px;
-}
-
-/* Grilla de libros y portadas */
-.books-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin: 1.5rem 0;
-}
-
-.books-grid.novels-grid {
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 600px;
-  margin: 1.5rem auto;
-}
-
-.book-card {
-  background: rgba(35, 22, 14, 0.6);
-  border: 1px solid #4a3324;
-  border-radius: 8px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.book-card:hover {
-  transform: translateY(-5px);
-  border-color: #d19a66;
-}
-
-.book-card.highlight {
-  border: 2px solid #d19a66;
-  box-shadow: 0 0 15px rgba(209, 154, 102, 0.25);
-}
-
-.book-cover {
-  width: 110px;
-  height: 165px;
-  object-fit: cover;
-  border-radius: 4px;
-  box-shadow: 0 5px 12px rgba(0,0,0,0.7);
-  margin-bottom: 0.8rem;
-  background-color: #1a120d; /* Fondo por si la imagen tarda en cargar */
-}
-
-.book-title {
-  font-family: 'Cinzel', serif;
-  font-size: 0.95rem;
-  color: #e2d7c5;
-  margin-bottom: 0.2rem;
-  line-height: 1.2;
-}
-
-.book-year {
-  font-size: 0.85rem;
-  color: #a87b51;
-}
-
-/* Estilo para la diapositiva de la cita */
-.quote-large {
-  font-family: 'Lora', serif;
-  font-size: 1.6rem;
-  font-style: italic;
-  color: #d19a66;
-  line-height: 1.6;
-  margin: 1.5rem 0;
-}
-
-.quote-author {
-  font-family: 'Cinzel', serif;
-  font-size: 1.1rem;
-  color: #a89481;
-  text-align: right;
-  margin-bottom: 1.5rem;
+/* --- REGLAS RESPONSIVAS PARA CELULAR (PANTALLA VERTICAL) --- */
+@media (max-width: 768px) {
+  .content {
+    padding: 1.5rem 1rem;
   }
+
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 1.5rem; }
+  .quote-large { font-size: 1.2rem; }
+
+  /* Cambiar grilla de libros a 2 columnas en celulares */
+  .books-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .book-cover {
+    width: 80px;
+    height: 120px;
+  }
+
+  .book-title {
+    font-size: 0.8rem;
+  }
+
+  .author-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .author-img {
+    width: 130px;
+    height: 170px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  /* En celulares muy pequeños, 1 libro por fila para evitar apretones */
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+}
