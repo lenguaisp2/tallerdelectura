@@ -262,3 +262,84 @@ ul {
   text-align: right;
   margin-bottom: 1.5rem;
 }
+
+/* Ajuste de contenedor más ancho para pantallas horizontales / TV */
+.content.wide-content {
+  max-width: 1050px;
+}
+
+/* Grilla de libros y portadas */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.books-grid.novels-grid {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 600px;
+  margin: 1.5rem auto;
+}
+
+.book-card {
+  background: rgba(35, 22, 14, 0.6);
+  border: 1px solid #4a3324;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  border-color: #d19a66;
+}
+
+.book-card.highlight {
+  border: 2px solid #d19a66;
+  box-shadow: 0 0 15px rgba(209, 154, 102, 0.25);
+}
+
+.book-cover {
+  width: 110px;
+  height: 165px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.7);
+  margin-bottom: 0.8rem;
+  background-color: #1a120d; /* Fondo por si la imagen tarda en cargar */
+}
+
+.book-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  color: #e2d7c5;
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+}
+
+.book-year {
+  font-size: 0.85rem;
+  color: #a87b51;
+}
+
+/* Estilo para la diapositiva de la cita */
+.quote-large {
+  font-family: 'Lora', serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: #d19a66;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+}
+
+.quote-author {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  color: #a89481;
+  text-align: right;
+  margin-bottom: 1.5rem;
+  }
