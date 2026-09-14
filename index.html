@@ -31,7 +31,7 @@
     <section class="slide" id="slide-1">
       <div class="content">
         <blockquote class="quote-large">
-          "Creo que el mundo de lo real, y todo lo que etiquetamos como “normalidad” en nuestra vida, no es más que una convención social, un pacto con los otros que nos permite movernos dentro de ciertas reglas."
+          "Me interesa todo lo extraño que hay en lo cotidiano. Lo que llamamos normalidad es un malentendido."
         </blockquote>
         <p class="quote-author">— Samanta Schweblin</p>
         <div class="nav-buttons">
@@ -41,12 +41,11 @@
       </div>
     </section>
 
-    <!-- Slide 3: La Autora (Biografía e Imagen) -->
+    <!-- Slide 3: La Autora -->
     <section class="slide" id="slide-2">
       <div class="content">
         <h2>La autora: Samanta Schweblin</h2>
         <div class="author-layout">
-          <!-- Reemplaza "autora.jpg" por el nombre exacto de la imagen que subas a GitHub -->
           <img src="autora.jpg" alt="Samanta Schweblin" class="author-img">
           <div class="author-text">
             <p>Nació en Buenos Aires en 1978. Estudió Diseño de Imagen y Sonido (UBA) y reside en Berlín. Es una de las referentes fundamentales de la narrativa contemporánea en español y del gótico/extraño latinoamericano.</p>
@@ -59,25 +58,82 @@
       </div>
     </section>
 
-    <!-- Slide 4: Su Obra -->
+    <!-- Slide 4: Libros de Cuentos -->
     <section class="slide" id="slide-3">
-      <div class="content">
-        <h2>Su obra</h2>
+      <div class="content wide-content">
+        <h2>Obra: Cuentos</h2>
+        <div class="books-grid">
+          <div class="book-card">
+            <img src="nucleo-disturbio.jpg" alt="El núcleo del disturbio" class="book-cover">
+            <p class="book-title">El núcleo del disturbio</p>
+            <span class="book-year">(2002)</span>
+          </div>
+          <div class="book-card highlight">
+            <img src="pajaros-boca.jpg" alt="Pájaros en la boca" class="book-cover">
+            <p class="book-title">Pájaros en la boca</p>
+            <span class="book-year">(2009)</span>
+          </div>
+          <div class="book-card">
+            <img src="siete-casas.jpg" alt="Siete casas vacías" class="book-cover">
+            <p class="book-title">Siete casas vacías</p>
+            <span class="book-year">(2015)</span>
+          </div>
+          <div class="book-card">
+            <img src="el-buen-mal.jpg" alt="El buen mal" class="book-cover">
+            <p class="book-title">El buen mal</p>
+            <span class="book-year">(2025)</span>
+          </div>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn btn-secondary" onclick="prevSlide()">↑ Volver</button>
+          <button class="btn" onclick="nextSlide()">⛏️ ↓</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5: Novelas -->
+    <section class="slide" id="slide-4">
+      <div class="content wide-content">
+        <h2>Obra: Novelas</h2>
+        <div class="books-grid novels-grid">
+          <div class="book-card">
+            <img src="distancia-rescate.jpg" alt="Distancia de rescate" class="book-cover">
+            <p class="book-title">Distancia de rescate</p>
+            <span class="book-year">(2014)</span>
+          </div>
+          <div class="book-card">
+            <img src="kentukis.jpg" alt="Kentukis" class="book-cover">
+            <p class="book-title">Kentukis</p>
+            <span class="book-year">(2018)</span>
+          </div>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn btn-secondary" onclick="prevSlide()">↑ Volver</button>
+          <button class="btn" onclick="nextSlide()">⛏️ ↓</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: Premios y Cine (Síntesis) -->
+    <section class="slide" id="slide-5">
+      <div class="content wide-content">
+        <h2>Reconocimientos y Cine</h2>
         <div class="cards-grid">
           <div class="card">
-            <h3>Libros de cuentos</h3>
+            <h3>Premios Destacados</h3>
             <ul>
-              <li><em>El núcleo del disturbio</em> (2002)</li>
-              <li><em>Pájaros en la boca</em> (2009)</li>
-              <li><em>Siete casas vacías</em> (2015)</li>
-              <li><em>El buen mal</em> (2025)</li>
+              <li><strong>National Book Award</strong> (2022) — <em>Siete casas vacías</em></li>
+              <li><strong>Premio Ribera del Duero</strong> (2015) — <em>Siete casas vacías</em></li>
+              <li><strong>Premio Casa de las Américas</strong> (2008) — <em>Pájaros en la boca</em></li>
+              <li><strong>Premios Konex</strong> (2014, 2024) — Trayectoria en Cuento</li>
             </ul>
           </div>
           <div class="card">
-            <h3>Novelas</h3>
+            <h3>Adaptaciones Audiovisuales</h3>
             <ul>
-              <li><em>Distancia de rescate</em> (2014)</li>
-              <li><em>Kentukis</em> (2018)</li>
+              <li><strong>Distancia de rescate:</strong> Largometraje para Netflix (2021) dir. Claudia Llosa.</li>
+              <li><strong>Nada de todo esto:</strong> Cortometraje (2023) en la Sección Oficial del Festival de Cannes.</li>
+              <li><strong>La pesada valija de Benavides:</strong> Película de suspenso (2016).</li>
             </ul>
           </div>
         </div>
@@ -88,8 +144,8 @@
       </div>
     </section>
 
-    <!-- Slide 5: El Cuento -->
-    <section class="slide" id="slide-4">
+    <!-- Slide 7: El Cuento -->
+    <section class="slide" id="slide-6">
       <div class="content">
         <h2>"Bajo tierra" (<em>Pájaros en la boca</em>, 2009)</h2>
         <div class="box">
