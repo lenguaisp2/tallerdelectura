@@ -95,3 +95,16 @@ tsParticles.load("tsparticles", {
 }).then(container => {
   particlesContainer = container;
 });
+
+    // Actualizar fondo y partículas según el nivel
+function updateDepth(index) {
+  body.className = `depth-${Math.min(index, 4)}`; // Mantiene los gradientes oscuros
+
+  if (particlesContainer) {
+    const pOptions = particlesContainer.options;
+    pOptions.particles.number.value = 70 + (index * 25);
+    pOptions.particles.move.speed.min = 1 + (index * 0.5);
+    pOptions.particles.move.speed.max = 3 + (index * 0.8);
+    particlesContainer.refresh();
+  }
+        }
